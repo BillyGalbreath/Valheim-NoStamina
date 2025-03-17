@@ -1,0 +1,12 @@
+/.idea/
+/.vs/
+/.vscode/
+/.vshistory/
+/bin/
+/obj/
+/publish/
+*/node_modules/
+/web/public/livemap.js*
+/web/public/livemap.css*
+/web/public/data/
+/web/public/tiles/

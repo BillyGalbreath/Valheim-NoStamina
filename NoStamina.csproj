@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net481</TargetFramework>
+        <EmbedAllSources>true</EmbedAllSources>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <DebugType>full</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+        <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="$(VALHEIM)/valheim_Data/Managed/*.dll" Private="false" />
+        <Reference Include="$(R2MODMAN)/**/BepInEx/core/*.dll" Exclude="$(R2MODMAN)/**/0Harmony20.dll" Private="false" />
+        <None Include="LICENSE;README.md;resources/**" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" Link="%(RecursiveDir)%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <Target Name="Package" AfterTargets="PostBuildEvent">
+        <ZipDirectory DestinationFile="bin/$(TargetName).zip" SourceDirectory="$(TargetDir)" Overwrite="true" />
+    </Target>
+</Project>

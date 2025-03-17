@@ -1,0 +1,9 @@
+﻿{
+  "name": "NoStamina",
+  "description": "Removes stamina from game.",
+  "version_number": "0.0.1",
+  "website_url": "",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2200"
+  ]
+}
